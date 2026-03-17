@@ -14,13 +14,12 @@ let notes = [];
 let welcome = `Тебя приветствует приложение ${NAME_PROJ}`;
 
 const welcomeApp = () => {
-  Decorator.presentMenu(welcome);
+  Decorator.showMenu(notes);
   showMenu();
 };
 
 const addNote = () => {
   rl.question("Введите заголовок: ", (title) => {
-    // Валидация заголовка
     const titleValidation = helper.validateInput(title);
     if (!titleValidation.isValid) {
       Decorator.infoMessage(titleValidation.message, 'error');
@@ -28,7 +27,6 @@ const addNote = () => {
     }
 
     rl.question("Напишите текст заметки: ", (content) => {
-      // Валидация контента
       const contentValidation = helper.validateInput(content);
       if (!contentValidation.isValid) {
         Decorator.infoMessage(contentValidation.message, 'error');

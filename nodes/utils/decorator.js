@@ -1,6 +1,32 @@
 class Decorator {
-  static drawLine(length = 30) {
-    console.log("=".repeat(length));
+  static drawLine(num, type) {
+    if(type == 1){
+      console.log("=".repeat(num));
+    }else if(type == 2){
+      console.log("-".repeat(num));
+    }else if(type == 3){
+      console.log("_".repeat(num));
+    }else if(type == 4){
+      console.log("~".repeat(num));
+    }
+  }
+
+  // ┌ ─ ┐ │ └ ┘ ├ ┤ ┬ ┴ ┼
+  static showFormatNote(note){
+      this.drawLine(50);
+      console.log(" ┌" + "─".repeat(50));
+      console.log(` │ ${note.id} * ${note.date}`);
+      console.log(` │ ${note.title}`);
+      console.log(` │ ${note.content}`);
+      console.log(" └" + "─".repeat(50));
+      this.drawLine(50);
+  }
+
+  static showFormatAllNotes(notes){
+    console.log("----Все ваши заметки----");
+    notes.forEach((note) => {
+      note.showFormatNote(note);
+    });
   }
 
   static drawDoubleLine(length = 30) {
@@ -15,17 +41,17 @@ class Decorator {
   }
 
   static noteHeader(note) {
-    this.drawLine();
+    this.drawLine(50, 2);
     console.log(`   📝 ${note.title}`);
-    this.drawLine();
+    this.drawLine(50, 2);
   }
 
   static infoMessage(message, type = 'info') {
     const symbols = {
-      success: '✅',
-      error: '❌',
-      warning: '⚠️',
-      info: 'ℹ️'
+      success: '✅ ',
+      error: '❌ ',
+      warning: '⚠️ ',
+      info: 'ℹ️ '
     };
     
     const symbol = symbols[type] || symbols.info;
@@ -44,13 +70,9 @@ class Decorator {
 
   static showMenu(items) {
     console.log('\n');
-    this.drawLine();
+    this.drawLine(50, 2);
     console.log('   ГЛАВНОЕ МЕНЮ');
-    this.drawLine();
-    items.forEach((item, index) => {
-      console.log(`   ${index + 1}. ${item}`);
-    });
-    this.drawLine();
+    this.drawLine(50, 2);
   }
 }
 
