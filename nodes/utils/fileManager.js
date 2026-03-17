@@ -7,7 +7,8 @@ const saveFile = (notes) => {
 }
 
 const loadFile = () => {
-    return fs.readFileSync(path, 'utf-8');
+    const jsonData = fs.readFileSync(path, 'utf-8');
+    return JSON.parse(jsonData)
 }
 
 module.exports = {
