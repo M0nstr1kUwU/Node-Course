@@ -1,6 +1,7 @@
 const readline = require("readline");
 const helper = require("./utils/helper");
 const Decorator = require("./utils/decorator");
+const fileManager = require("./utils/fileManager")
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -9,7 +10,7 @@ const rl = readline.createInterface({
 
 const NAME_PROJ = '"NOTE"-"BOOK"';
 
-let notes = [];
+let notes = fileManager.loadFile();
 
 let welcome = `Тебя приветствует приложение ${NAME_PROJ}`;
 
@@ -41,6 +42,7 @@ const addNote = () => {
       };
       
       notes.push(newNote);
+      fileManager.saveFile(notes);
       Decorator.infoMessage(`Заметка "${newNote.title}" сохранена!`, 'success');
       Decorator.infoMessage(`Всего заметок: ${notes.length}`, 'info');
 

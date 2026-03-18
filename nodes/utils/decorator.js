@@ -17,7 +17,7 @@ class Decorator {
       console.log(" ┌" + "─".repeat(50));
       console.log(` │ ${note.id} * ${note.date}`);
       console.log(` │ ${note.title}`);
-      console.log(` │ ${note.content}`);
+      console.log(` │ ${note.content}`); 
       console.log(" └" + "─".repeat(50));
       this.drawLine(50);
   }
