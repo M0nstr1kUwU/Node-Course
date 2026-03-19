@@ -7,7 +7,7 @@ async function loadNotes(){
     try{
         const res = await fetch('/api/notes');
         notes = await res.json();
-        stats.innerText = 'Заметок ${notes.length}';
+        stats.innerText = `Заметок ${notes.length}`;
     }
     catch(error){
         console.log("Ошибка", error);

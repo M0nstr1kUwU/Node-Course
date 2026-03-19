@@ -1,151 +1,108 @@
 const readline = require("readline");
 const helper = require("./utils/helper");
 const Decorator = require("./utils/decorator");
-const fileManager = require("./utils/fileManager")
+const fileManager = require("./utils/fileManager");
 
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
 });
 
 const NAME_PROJ = '"NOTE"-"BOOK"';
-
 let notes = fileManager.loadFile();
-
 let welcome = `Тебя приветствует приложение ${NAME_PROJ}`;
 
-const welcomeApp = () => {
-  Decorator.showMenu(notes);
-  showMenu();
+const question = async (query) => {
+  return new Promise((resolve) => {
+    rl.question(query, resolve);
+  });
 };
 
-const addNote = () => {
-  rl.question("Введите заголовок: ", (title) => {
-    const titleValidation = helper.validateInput(title);
-    if (!titleValidation.isValid) {
-      Decorator.infoMessage(titleValidation.message, 'error');
-      return addNote();
-    }
 
-    rl.question("Напишите текст заметки: ", (content) => {
-      const contentValidation = helper.validateInput(content);
-      if (!contentValidation.isValid) {
-        Decorator.infoMessage(contentValidation.message, 'error');
-        return addNote();
-      }
-
-      const newNote = {
-        id: notes.length + 1,
-        title: titleValidation.value,
-        content: contentValidation.value,
-        date: helper.formatDate(new Date())
-      };
-      
-      notes.push(newNote);
-      fileManager.saveFile(notes);
-      Decorator.infoMessage(`Заметка "${newNote.title}" сохранена!`, 'success');
-      Decorator.infoMessage(`Всего заметок: ${notes.length}`, 'info');
-
-      showMenu();
-    });
-  });
-}; 
-
-const showNotes = () => {
-  if (notes.length === 0) {
-    Decorator.infoMessage('У вас пока нет заметок!', 'warning');
-    return showMenu();
-  }
-
-  Decorator.drawDoubleLine();
-  console.log('         ВСЕ ВАШИ ЗАМЕТКИ');
-  Decorator.drawDoubleLine();
-  
-  notes.forEach((note) => {
-    Decorator.noteHeader(note);
-    console.log(`   ID: ${note.id}`);
-    console.log(`   Дата: ${note.date}`);
-    Decorator.contentBox(note.content);
-    console.log('\n');
-  });
-  
-  showMenu();
+const welcomeApp = async () => {
+  Decorator.presentWelcome(welcome);
+  await showMenu();
 };
 
-const showMenu = () => {
-  Decorator.infoMessage(`Всего заметок: ${notes.length}`, 'info');
-  
-  const menuItems = [
-    'Добавить заметку',
-    'Посмотреть заметки', 
-    'Удалить заметку'
-  ];
-  
-  Decorator.showMenu(menuItems);
+const addNote = async () => {
+  const title = await question("Введите заголовок  ");
+  const content = await question("Напишите текст заметки  ");
 
-  rl.question("Выберите пункт от 1 до 4: ", (choice) => {
-    const validation = helper.validateInput(choice, 'number');
-    
-    if (!validation.isValid) {
-      Decorator.infoMessage(validation.message, 'error');
-      return showMenu();
-    }
+  const newNote = {
+    id: notes.length + 1,
+    title: title,
+    content: content,
+    date: new Date().toLocaleString(),
+  };
+  notes.push(newNote);
+  fileManager.saveFile(notes);
+  console.log(`Заметка ${newNote.title} сохранена!`);
 
-    switch(validation.value) {
-      case 1:
-        addNote();
+  await showMenu();
+};
+
+const showNotes = async () => {
+  Decorator.showFormatAllNotes(notes);
+  await showMenu();
+};
+
+const showMenu = async () => {
+  helper.statsNotes(notes);
+  Decorator.presentMenu();
+
+  const choice = await question("Выберите пункт от 1 до 4  ");
+  try {
+    switch (choice) {
+      case "1":
+        await addNote();
         break;
-      case 2:
-        showNotes();
+      case "2":
+        await showNotes();
         break;
-      case 3:
-        deleteNote();
+      case "3":
+        await deleteNote();
+        break;
+      case "4":
+        console.log("Завершение работы!");
+        rl.close();
         break;
       default:
-        Decorator.infoMessage("Нет такого пункта!", 'error');
-        showMenu();
+        console.log("Нет такого пункта!");
+        await showMenu();
     }
-  });
+  } catch (e) {
+    console.log("Ошибка! Закрытие приложения!");
+    rl.close();
+  }
 };
 
-const deleteNote = () => {
+const deleteNote = async () => {
   if (notes.length === 0) {
-    Decorator.infoMessage("У вас пока нет заметок!", 'warning');
-    return showMenu();
+    console.log("У вас пока нет заметок!");
+  }
+  notes.forEach((note) => {
+    console.log(`\n * [${note.id}] * ${note.title} *`);
+  });
+
+  const choice = await question(
+    "Введите номер заметки для удаления или 0 для отмены  ",
+  );
+
+  let num = parseInt(choice);
+
+  if (num === 0) {
+    await showMenu();
+  } else if (num > 0 && num <= notes.length) {
+    notes.splice(num - 1, 1);
+    notes = helper.reindexId(notes);
+    fileManager.saveFile(notes);
+    console.log(`Заметка удалена!`);
+  } else {
+    console.log("Нет подходящей заметки!");
+    await showMenu();
   }
 
-  Decorator.drawLine();
-  console.log('   ВЫБЕРИТЕ ЗАМЕТКУ ДЛЯ УДАЛЕНИЯ:');
-  Decorator.drawLine();
-  
-  notes.forEach((note) => {
-    console.log(`   [${note.id}] * ${note.title}`);
-  });
-  
-  rl.question("\nВведите номер заметки (0 для отмены): ", (choice) => {
-    const validation = helper.validateInput(choice, 'number');
-    
-    if (!validation.isValid) {
-      Decorator.infoMessage(validation.message, 'error');
-      return showMenu();
-    }
-
-    let num = validation.value;
-    
-    if (num === 0) {
-      showMenu();
-    }
-    else if (num > 0 && num <= notes.length) {
-      notes.splice(num - 1, 1);
-      notes = helper.reindexId(notes);
-      Decorator.infoMessage(`Заметка удалена!`, 'success');
-      showMenu();
-    }
-    else {
-      Decorator.infoMessage("Нет подходящей заметки!", 'error');
-      showMenu();
-    }
-  });
+  await showMenu();
 };
 
 welcomeApp();

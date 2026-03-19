@@ -7,7 +7,7 @@ const fileManager = require("./utils/fileManager");
 
 let notes = fileManager.loadFile();
 
-const server = http.createServer(async (requestAnimationFrame, res) => {
+const server = http.createServer(async (req, res) => {
     const {url, method} = req
 
     // Root Routers
@@ -33,5 +33,5 @@ const server = http.createServer(async (requestAnimationFrame, res) => {
 });
 
 server.listen(3000, () => {
-    console.log("Сервер запущен на порту http://localhhost:3000")
+    console.log("Сервер запущен на порту http://localhost:3000")
 });
