@@ -1,35 +1,77 @@
-const stats = document.getElementById('stats');
-const content = document.getElementById('content');
+const stats = document.getElementById("stats");
+const notes_conteiner = document.getElementById("content");
 
-let notes = []
+let notes = [];
 
-async function loadNotes(){
-    try{
-        const res = await fetch('/api/notes');
-        notes = await res.json();
-        stats.innerText = `Заметок ${notes.length}`;
+async function loadNotes() {
+  try {
+    const res = await fetch("api/notes");
+    notes = await res.json();
+    if(notes.length === 0){
+      stats.innerText = "У вас нет заметок. Создайте свою первую заметку! \n\n";
     }
-    catch(error){
-        console.log("Ошибка", error);
-        stats.innerHTML = `Информации о заметках нет`;
+    else{
+      stats.innerText = `Заметок ${notes.length}`;
     }
+  } catch (error) {
+    console.log("Ощибка", error);
+    stats.innerText = `Информации о заметках нет`;
+  }
 }
 
+async function addNote() {
+  const title = prompt("Введите название ");
+  const content = prompt("Введите содержание ");
+  if(title === null | content === null){
+    alert("Заметка не может содержать пустое название или содержание!");
+    return;
+  }
+  try {
+    await fetch("api/notes", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ title, content }),
+    });
+    await showNotes();
+  } catch (error) {
+    console.log("ERROR", error.message);
+  }
+}
 
-async function addNote(){
-    const title = prompt("Введите название ");
-    const content = prompt("Введите содержание ");
+async function showNotes(){
+    await loadNotes();
+    if(notes.length === 0){
+       notes_conteiner.innerHTML = '<h2> Пока у вас нет заметок! </h2>';
+    }
+    let html = '<h2> --- Заметки --- </h2>';
+    notes.forEach((note) => {
+        html += `
+          <div style=" background-color: #030202; color: #008f4a; ">
+              <small> [ ${note.id} ] ${note.date} </small>
+              <strong> ${note.title} </strong>
+              <p> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ </p>
+              <strong> ${note.content} </strong>
+          </div>
+        `;
+    });
+    notes_conteiner.innerHTML = html;
     
-    try{
-        await fetch('/api/notes', {
-            method: "POST",
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({title, content})
-        });
-    }
-    catch(error){
-        console.log("Ошибка", error);
-    }
+}
+
+async function deleteNote(){
+  loadNotes();
+  if(notes.length === 0){
+       alert("Пока нечего удалить! Заметок нет!");
+  }
+  let list = notes.map(note => ` [${note.id}] ${note.title} `.join('\n'));
+  const input = prompt(`Введите номер заметки для удаления: \n\n${list}`);
+
+  const id_input = parseInt(input);
+  if(!input){return;}
+
+  if(id_input > 0 && id_input <= notes.length){
+
+  }
 }
 
 loadNotes();
