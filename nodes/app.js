@@ -60,10 +60,7 @@ async function showNotes(){
 
 async function resetNote() {
   await loadNotes();
-  if (notes.length === 0) {
-    alert("Пока нечего изменять! Заметок нет!");
-    return;
-  }
+  if (notes.length === 0) { alert("Пока нечего изменять! Заметок нет!"); return; }
 
   let list = notes.map(note => ` [${note.id}] ${note.title} `).join('\n');
   const input = prompt(`Введите номер заметки для изменения:\n\n${list}`);
@@ -80,19 +77,15 @@ async function resetNote() {
       content: newContent || currentNote.content
     };
 
-    try {
-      const res = await fetch(`api/notes/${id_input}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(updatedNote)
-      });
-      if (res.ok) {
-        await showNotes();
-      } else {
-        alert("Ошибка при изменении заметки");
-      }
-    } catch (error) {
-      console.log("ERROR", error.message);
+    const res = await fetch(`api/notes/${id_input}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(updatedNote)
+    });
+    if (res.ok) {
+      await showNotes();
+    } else {
+      alert("Ошибка при изменении заметки");
     }
   } else {
     alert("Некорректный номер заметки!");
