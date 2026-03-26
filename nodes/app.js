@@ -58,6 +58,48 @@ async function showNotes(){
     
 }
 
+async function resetNote() {
+  await loadNotes();
+  if (notes.length === 0) {
+    alert("Пока нечего изменять! Заметок нет!");
+    return;
+  }
+
+  let list = notes.map(note => ` [${note.id}] ${note.title} `).join('\n');
+  const input = prompt(`Введите номер заметки для изменения:\n\n${list}`);
+  if (!input) return;
+
+  const id_input = parseInt(input);
+  if (id_input > 0 && id_input <= notes.length) {
+    const currentNote = notes.find(n => n.id === id_input);
+    const newTitle = prompt("Введите новый заголовок (оставьте пустым, чтобы не менять):", currentNote.title);
+    const newContent = prompt("Введите новое содержание (оставьте пустым, чтобы не менять):", currentNote.content);
+
+    const updatedNote = {
+      title: newTitle || currentNote.title,
+      content: newContent || currentNote.content
+    };
+
+    try {
+      const res = await fetch(`api/notes/${id_input}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(updatedNote)
+      });
+      if (res.ok) {
+        await showNotes();
+      } else {
+        alert("Ошибка при изменении заметки");
+      }
+    } catch (error) {
+      console.log("ERROR", error.message);
+    }
+  } else {
+    alert("Некорректный номер заметки!");
+  }
+}
+
+
 async function deleteNote(){
   await loadNotes();
   if(notes.length === 0){

@@ -38,7 +38,6 @@ const server = http.createServer(async (req, res) => {
     let body = "";
     req.on("data", (chunk) => (body += chunk));
     req.on("end", async () => {
-      console.log("create start");
       const { title, content } = JSON.parse(body);
       const newNote = {
         id: notes.length + 1,
@@ -46,7 +45,6 @@ const server = http.createServer(async (req, res) => {
         content: content,
         date: new Date().toLocaleString(),
       };
-      console.log("create end");
       notes.push(newNote);
       fileManager.saveFile(notes);
       console.log(`Заметка ${newNote.title} сохранена!`);
@@ -66,7 +64,29 @@ const server = http.createServer(async (req, res) => {
       res.writeHead(200, { "Content-Type": "application/json" });
       res.end(JSON.stringify({ success: true }));
       return;
-    }
+  }
+
+  if (url.startsWith("/api/notes/") && method === "PUT") {
+    const id = parseInt(url.split('/')[3]);
+    let body = "";
+    req.on("data", (chunk) => (body += chunk));
+    req.on("end", async () => {
+      const { title, content } = JSON.parse(body);
+      const noteIndex = notes.findIndex(n => n.id === id);
+      if (noteIndex !== -1) {
+        notes[noteIndex].title = title;
+        notes[noteIndex].content = content;
+        notes[noteIndex].date = new Date().toLocaleString();
+        fileManager.saveFile(notes);
+        res.writeHead(200, { "Content-Type": "application/json" });
+        res.end(JSON.stringify({ success: true }));
+      } else {
+        res.writeHead(404, { "Content-Type": "application/json" });
+        res.end(JSON.stringify({ success: false, message: "Note not found" }));
+      }
+    });
+    return;
+  }
 });
 
 server.listen(3000, () => {

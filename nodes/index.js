@@ -41,6 +41,44 @@ const addNote = async () => {
   await showMenu();
 };
 
+const editNote = async () => {
+  if (notes.length === 0) {
+    console.log("У вас пока нет заметок!");
+    await showMenu();
+    return;
+  }
+
+  console.log("\nСписок заметок:");
+  notes.forEach((note) => {
+    console.log(` * [${note.id}] * ${note.title} *`);
+  });
+
+  const idInput = await question("\nВведите номер заметки для редактирования (или 0 для отмены): ");
+  const id = parseInt(idInput);
+  if (id === 0) {
+    await showMenu();
+    return;
+  }
+
+  const noteToEdit = notes.find(n => n.id === id);
+  if (!noteToEdit) {
+    console.log("Нет заметки с таким номером!");
+    await showMenu();
+    return;
+  }
+
+  const newTitle = await question(`Введите новый заголовок (текущий: ${noteToEdit.title}): `);
+  const newContent = await question(`Введите новое содержание (текущее: ${noteToEdit.content}): `);
+
+  noteToEdit.title = newTitle || noteToEdit.title;
+  noteToEdit.content = newContent || noteToEdit.content;
+  noteToEdit.date = new Date().toLocaleString();
+
+  fileManager.saveFile(notes);
+  console.log("Заметка обновлена!");
+  await showMenu();
+};
+
 const showNotes = async () => {
   Decorator.showFormatAllNotes(notes);
   await showMenu();
@@ -48,9 +86,9 @@ const showNotes = async () => {
 
 const showMenu = async () => {
   helper.statsNotes(notes);
-  Decorator.presentMenu();
+  Decorator.presentMenu(); // нужно обновить меню в декораторе
 
-  const choice = await question("Выберите пункт от 1 до 4  ");
+  const choice = await question("Выберите пункт от 1 до 5  ");
   try {
     switch (choice) {
       case "1":
@@ -63,6 +101,9 @@ const showMenu = async () => {
         await deleteNote();
         break;
       case "4":
+        await editNote();
+        break;
+      case "5":
         console.log("Завершение работы!");
         rl.close();
         break;
