@@ -69,8 +69,8 @@ async function resetNote() {
   const id_input = parseInt(input);
   if (id_input > 0 && id_input <= notes.length) {
     const currentNote = notes.find(n => n.id === id_input);
-    const newTitle = prompt("Введите новый заголовок (оставьте пустым, чтобы не менять):", currentNote.title);
-    const newContent = prompt("Введите новое содержание (оставьте пустым, чтобы не менять):", currentNote.content);
+    const newTitle = prompt("Введите новый заголовок:", currentNote.title);
+    const newContent = prompt("Введите новое содержание:", currentNote.content);
 
     const updatedNote = {
       title: newTitle || currentNote.title,
