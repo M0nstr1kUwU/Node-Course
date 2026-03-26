@@ -3,14 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Notes Manager</title>
+    <style>
+        *{
+            background-color: rgb(15, 15, 15);
+        }
+        #stats{
+            background-color: rgba(21, 194, 16, 0.692);
+        }
+        #content{
+            color: crimson;
+        }
+        .menu-buttons button{
+            color: whitesmoke;
+        }
+    </style>
 </head>
 <body>
     <div id="stats"> </div>
-    <div>
+    <div class="menu-buttons">
         <button onclick='showNotes()'> Показать заметки</button>
         <button onclick='addNote()'> Добавить заметку</button>
-        <button> Удалить заметку</button>
+        <button onclick='deleteNote()'> Удалить заметку</button>
     </div>
     <div id="content"> </div>
 
