@@ -64,7 +64,7 @@ async function showNotes() {
         notesContainer.innerHTML = '<h2>Пока у вас нет заметок!</h2>';
         return;
     }
-    let html = '<h2>--- Ваши заметки ---</h2>';
+    let html = '<h2>--- ЗАМЕТКИ ---</h2>';
     notes.forEach((note) => {
         html += `
             <div style="background-color: #030202; color: #008f4a; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
