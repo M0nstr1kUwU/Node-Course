@@ -11,7 +11,7 @@ const username = localStorage.getItem('username');
 if (username) {
     const userInfoDiv = document.getElementById('user-info');
     if (userInfoDiv) {
-        userInfoDiv.innerHTML = `Пользователь: ${username} | <button onclick="logout()">Выйти</button>`;
+        userInfoDiv.innerHTML = `LK: ${username}  <button onclick="logout()">Выйти</button>`;
     }
 }
 

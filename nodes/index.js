@@ -86,7 +86,7 @@ const showNotes = async () => {
 
 const showMenu = async () => {
   helper.statsNotes(notes);
-  Decorator.presentMenu(); // нужно обновить меню в декораторе
+  Decorator.presentMenu();
 
   const choice = await question("Выберите пункт от 1 до 5  ");
   try {
