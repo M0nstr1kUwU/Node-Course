@@ -23,5 +23,10 @@ function selectImagesFromPage() {
 function onResultParsing(arr){
     const imagesUrl = frames.map(frame => frame.result)
         .reduce((r1, r2) => r1.concat(r2));
-    window.navigation.clipboard.writeText(imagesUrl).then(window.close());
+    // window.navigation.clipboard.writeText(imagesUrl).then(window.close());
+    toPageImages();
+}
+
+function toPageImages(){
+    chrome.tabs.create({ url: "pages/page.html" });
 }

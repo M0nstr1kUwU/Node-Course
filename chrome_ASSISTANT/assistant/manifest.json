@@ -1,0 +1,20 @@
+{
+    "name": "My Assistant",
+    "description": "Мой ассистент для работы с Chrome",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "icons": {},
+    "action": { 
+        "default_index": "assist_src/index.html"
+    },
+    "permissions": [
+        "storage",
+        "scripting",
+        "activeTab",
+        "downloads"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "background": {}
+}
