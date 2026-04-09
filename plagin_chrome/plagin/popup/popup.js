@@ -19,16 +19,20 @@ function selectImages(){
 }
 
 function onResult(frames){
-  const imageUrls = frames.map(frame => frame.result)
-    .reduce((r1, r2) => r1.concat(r2));
-
+  if(!frames || frames.lenght == 0){
+    alert("На странице нет подходящих картинок!");
+    return;
+  }
+  const imageUrls = frames.map(frame => frame.result).reduce((r1, r2) => r1.concat(r2));
   toPageImages(imageUrls);
 }
 
 function toPageImages(urls){
   chrome.tabs.create({ url: "pages/page.html", active: false}, (tab) => {
-    chrome.runtime.sendMessage(tab.id, urls, (response) => {
-      chrome.tabs.update(tab.id, { active: true });
-    });
+    setTimeout(() => {
+      chrome.tabs.sendMessage(tab.id, urls, (response) => {
+        chrome.tabs.update(tab.id, { active: true });
+      });
+    }, 500);
   });
 }
