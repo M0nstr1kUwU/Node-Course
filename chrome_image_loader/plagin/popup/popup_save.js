@@ -45,7 +45,7 @@ function renderImages(images) {
     if (!images.length) {
         imagesContainer.innerHTML = '<p style="color: #ff8888;">❌ Изображения не найдены на этой странице.</p>';
         downloadAllBtn.classList.add('hidden');
-        return;
+        return; 
     }
 
     images.forEach((img, idx) => {
