@@ -32,14 +32,14 @@ function showTabs() {
     saveTabsDiv.innerHTML = html;
 
     document.querySelectorAll(".open-btn").forEach(btn => {
-        btn.addEventListener("click", (e) => {
+        btn.addEventListener("click", () => {
             const url = btn.getAttribute("data-url");
             chrome.tabs.create({ url: url });
         });
     });
 
     document.querySelectorAll(".delete-btn").forEach(btn => {
-        btn.addEventListener("click", (e) => {
+        btn.addEventListener("click", () => {
             const index = parseInt(btn.getAttribute("data-index"));
             savedTabs.splice(index, 1);
             chrome.storage.local.set({ savedTabs: savedTabs });
