@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 400px;
+    min-height: 300px;
+    background: #19191a;
+    color: #eee;
+}
+
+.container {
+    padding: 16px;
+}
+
+h1 {
+    font-size: 18px;
+    margin-bottom: 16px;
+    color: #eee;
+    border-left: 3px solid #4c0c5c;
+    padding-left: 12px;
+}
+
+.tabs-list {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 16px;
+}
+
+.tab-item {
+    background: #282829;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.tab-item:hover {
+    background: #1e2a4a;
+    transform: translateX(4px);
+}
+
+.tab-info {
+    flex: 1;
+    overflow: hidden;
+}
+
+.tab-title {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #fff;
+}
+
+.tab-url {
+    font-size: 11px;
+    color: #7a0ca5;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.open-btn, .delete-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.open-btn {
+    background: #5d5d70;
+    color: white;
+}
+
+.open-btn:hover {
+    background: #1a1922;
+    transform: scale(1.02);
+}
+
+.delete-btn {
+    background: #e74c3c;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #c0392b;
+    transform: scale(1.02);
+}
+
+.save-btn, .clear-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 8px;
+}
+
+.save-btn {
+    background: #e71717;
+    color: white;
+}
+
+.save-btn:hover {
+    background: #9b2c2c;
+    transform: translateY(-1px);
+}
+
+.clear-btn {
+    background: #0c0c16;
+    color: #ffffff;
+    border: 1px solid #570b02;
+}
+
+.clear-btn:hover {
+    background: #e74c3c;
+    color: white;
+    transform: translateY(-1px);
+}
+
+.empty-message {
+    text-align: center;
+    padding: 40px 20px;
+    color: #888;
+    font-size: 14px;
+}
+
+.tabs-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.tabs-list::-webkit-scrollbar-track {
+    background: #0f0f1a;
+    border-radius: 3px;
+}
+
+.tabs-list::-webkit-scrollbar-thumb {
+    background: #6c5ce7;
+    border-radius: 3px;
+}

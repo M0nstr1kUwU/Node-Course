@@ -1,0 +1,21 @@
+{
+    "name": "Save tabs a Chrome",
+    "description": "",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "icons": {
+        "128": "icons/128_doll.png"
+    },
+    "action": { 
+        "default_popup": "popup/popup.html"
+    },
+    "permissions": [
+        "storage",
+        "tabs",
+        "activeTab"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "background": {}
+}
