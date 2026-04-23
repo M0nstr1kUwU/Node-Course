@@ -1,7 +1,1 @@
-// registry.js — список всех модулей ассистента
-export default [
-  "imageDownloader.js",
-  "mustHave.js",
-  "devTools.js",
-  "media.js"
-];
+export default ["imageDownloader.js", "musicDownloader.js"];

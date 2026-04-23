@@ -1,8 +1,11 @@
-chrome.runtime.onMessage.addListener((msg) => {
-  if (msg.type === "download") {
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message.type === "download") {
     chrome.downloads.download({
-      url: msg.url,
-      filename: msg.filename
+      url: message.url,
+      filename: message.filename,
+      saveAs: false
     });
+    sendResponse({ status: "ok" });
   }
+  return true;
 });
