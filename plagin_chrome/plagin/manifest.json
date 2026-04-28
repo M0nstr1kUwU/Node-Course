@@ -1,0 +1,13 @@
+{
+  "name": "Images Loder",
+  "description": " ",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "icons": {
+    "128": "icons/128_doll.png"
+  },
+  "action": { 
+    "default_popup" : "popup/popup.html"
+  },
+  "permissions": ["scripting" , "activeTab"]
+}
