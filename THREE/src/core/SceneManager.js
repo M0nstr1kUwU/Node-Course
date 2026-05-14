@@ -1,6 +1,3 @@
-//================================
-// менеджер управления сценой
-//================================
 import * as THREE from 'three';
 import {SCENE_CONFIG} from "../config/scene.js";
 

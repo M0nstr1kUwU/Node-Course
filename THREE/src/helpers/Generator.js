@@ -13,9 +13,9 @@ export class Generator {
     }
     
     /*_generateStars(){
-        const count = SCENE_CONFIG.stars.counts; // число звезд
+        const count = SCENE_CONFIG.stars.counts;
 
-        const positions = []; // массив координатами
+        const positions = [];
 
         for ( let i = 0; i < count; i ++ ) {
 
@@ -47,7 +47,6 @@ export class Generator {
         const positions = new Float32Array(counts * 3);
 
         for (let i = 0; i < counts; i++) {
-            // Случайные координаты в кубе
             positions[i * 3] = (Math.random() - 0.5) * 2000;
             positions[i * 3 + 1] = (Math.random() - 0.5) * 2000 * 0.6;
             positions[i * 3 + 2] = (Math.random() - 0.5) * 2000 * 0.5 - 50;

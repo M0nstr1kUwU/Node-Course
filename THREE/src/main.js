@@ -1,6 +1,3 @@
-//================================
-// главный файл - точка запуска
-//================================
 import * as THREE from 'three';
 import {SceneManager} from './core/SceneManager.js';
 import {CameraManager} from './core/CameraManager.js';
