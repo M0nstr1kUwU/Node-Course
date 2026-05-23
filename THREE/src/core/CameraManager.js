@@ -1,3 +1,6 @@
+//================================
+// менеджер управления камерой
+//================================
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import {CAMERA_CONFIG} from '../config/camera.js';

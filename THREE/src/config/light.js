@@ -1,10 +1,10 @@
 export const LIGHTS_CONFIG = {
     main: {
-        color: 0x77fcfa,
+        color: 'white',
         intensity: 1.2
     },
     ambient: {
-        color: 0xf1fc77,
+        color: 'white',
         intensity: 0.6
     }
 }

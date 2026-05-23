@@ -8,8 +8,9 @@ export class LightManager {
     }
     
     createAll(){
-        this._creatAmbientLight();
+        this._createAmbientLight();
         this._createMainLight();
+        this._createPointLight();
     }
     
     _createMainLight(){
@@ -17,14 +18,23 @@ export class LightManager {
         const light = new THREE.DirectionalLight(config.color, config.intensity);
         this.scene.add(light);
         this.lights.main = light;
+        console.log(this.lights);
     }
     
-    _creatAmbientLight(){
+    _createAmbientLight(){
         const config = LIGHTS_CONFIG.ambient;
         const light = new THREE.AmbientLight(config.color, config.intensity);
         this.scene.add(light);
         this.lights.ambient = light;
         
+    }
+    
+    _createPointLight(){
+        const config = LIGHTS_CONFIG.ambient;
+        const light = new THREE.PointLight(config.color, config.intensity);
+        light.position.add(new THREE.Vector3(0.5, 0.5, 0.5));
+        this.scene.add(light);
+        this.lights.point = light;
     }
     
     getLight(name){
