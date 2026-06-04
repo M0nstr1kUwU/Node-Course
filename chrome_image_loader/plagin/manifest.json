@@ -1,0 +1,22 @@
+{
+    "name": "Images Loader",
+    "description": "Парсер и загрузчик изображений с активной вкладки",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "icons": {
+        "128": "icons/128_doll.png"
+    },
+    "action": { 
+        "default_popup": "popup/popup.html"
+    },
+    "permissions": [
+        "storage",
+        "scripting",
+        "activeTab",
+        "downloads"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "background": {}
+}

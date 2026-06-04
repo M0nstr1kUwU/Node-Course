@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 500px;
+    max-height: 600px;
+    margin: 0;
+    padding: 16px;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #0a0a1a, #1a1a3a);
+    color: #eee;
+    text-align: center;
+    overflow-y: auto;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    color: #ffa500;
+    border-bottom: 1px solid #ffa50080;
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+button {
+    border-left: 2px solid orange;
+    border-right: 2px solid orange;
+    border-bottom: 0px;
+    border-top: 0px;
+    border-radius: 5px; 
+    width: 60%;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    color: orange;
+    background-color: rgb(12, 11, 11);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #ffa50020;
+    transform: scale(1.02);
+}
+
+#load-btn {
+    width: 80%;
+    font-size: 1rem;
+}
+
+#download-all-btn {
+    background: #2a5a2a;
+    border-color: #8bc34a;
+    color: #d4ffb0;
+    width: 80%;
+}
+
+.hidden {
+    display: none;
+}
+
+#loader {
+    margin: 16px;
+    font-style: italic;
+    color: #ffa500aa;
+}
+
+#images-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 16px 0;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.card {
+    background: #1e1e2ecc;
+    backdrop-filter: blur(4px);
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border: 1px solid #ffa50040;
+    transition: 0.1s;
+}
+
+.card:hover {
+    border-color: #ffa500;
+}
+
+.preview {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #00000066;
+    border: 1px solid #ffa50080;
+}
+
+.card-info {
+    flex: 1;
+    text-align: left;
+    font-size: 0.75rem;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+.card-info span {
+    display: block;
+    color: #ffaa33;
+    font-size: 0.7rem;
+}
+
+.download-single-btn {
+    background: #2c3e66;
+    border-color: #5dade2;
+    color: #aed6f1;
+    padding: 6px 12px;
+    margin: 0;
+    font-size: 0.75rem;
+}
+
