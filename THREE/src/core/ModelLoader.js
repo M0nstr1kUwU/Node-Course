@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import {MODEL_CONFIG} from '../config/model.js'
 
 export class ModelLoader{
     constructor(scene){
@@ -8,9 +9,14 @@ export class ModelLoader{
         this.modelLoader = new GLTFLoader();
     }
     
-    async load(){
-        this.model = await this.modelLoader.loadAsync( '../../models/freighter.glb' );
+    async load(url_index, key){
+        const url_config = MODEL_CONFIG[key][url_index]
+        this.model = await this.modelLoader.loadAsync( url_config );
         this.scene.add( this.model.scene );
-        this.model.scene.position.y = 4;
+        this.model.scene.position.y = 1;
+    }
+
+    getModel(){
+        return this.model.scenes[0].children[0];
     }
 }

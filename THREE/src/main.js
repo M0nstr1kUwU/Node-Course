@@ -5,11 +5,9 @@ import * as THREE from 'three';
 import {SceneManager} from './core/SceneManager.js';
 import {CameraManager} from './core/CameraManager.js';
 import {LightManager} from './core/LightManager.js';
-import {TestObject} from './helpers/test.js';  // скрипт для разработки и тестирования
 import {SkyGenerator} from './helpers/SkyGenerator.js';
 import {ModelLoader} from './core/ModelLoader.js';
-import {ShipGenerator} from './helpers/ShipGenerator.js';
-import {PaneConstructor} from './helpers/PaneConstructor.js'
+import {AsteroidManager} from './core/AsteroidManager.js';
 
 class Game{
     constructor(){
@@ -19,12 +17,12 @@ class Game{
         this.modelLoader = null;
         this.renderer = null;
         
-        this.test = null;
         this.skyGenerator = null;
-        this.shipGenerator = null;
-        
-        this.model = null;
-        this.pane = null;
+        this.asteroidManager = null;
+
+        this.ship = null;
+
+        this.clock = null;
         
         this.init();
     }
@@ -40,28 +38,50 @@ class Game{
         
         this.cameraManager = new CameraManager(this.renderer.domElement);
         this.cameraManager.create();
-        this.cameraManager.createControls();
+        this.cameraManager.createOrbitControls();
         
         this.lightManager = new LightManager(scene);
         this.lightManager.createAll();
-        
-        this.test = new TestObject(scene);
-        this.test.createAll();
-        this.model = this.test.group;
+
+        this.modelLoader = new ModelLoader(scene);
+        this.modelLoader.load(1, 'ships');
+
+        setTimeout(() => {
+            this.ship = this.modelLoader.getModel();
+            this.asteroidManager = new AsteroidManager(scene, this.ship);
+            this.asteroidManager.spawnAsteroids();
+        }, 1000)
         
         this.skyGenerator = new SkyGenerator(scene);
         this.skyGenerator.generateAll();
-        
-        //this.modelLoader = new ModelLoader(scene);
-        //this.modelLoader.load();
-        
-        this.shipGenerator = new ShipGenerator(scene);
-        //this.shipGenerator.createShip();
 
-        this.pane = new PaneConstructor();
-        this.pane.createAll(this.model);
+
+        this.clock = new THREE.Clock();
 
         window.addEventListener( 'resize', () => this.onWindowResize());
+
+        window.addEventListener( 'keydown', (event) => {
+            if(event.key === 'a'){
+                this.ship.position.z += 0.1;
+                this.ship.position.x += 0.1;
+                this.ship.rotation.z += 0.01;
+            }
+            if(event.key === 'd'){
+                this.ship.position.z -= 0.1;
+                this.ship.position.x += 0.1;
+                this.ship.rotation.z -= 0.01;
+            }
+            if(event.key === 'w'){
+                this.ship.position.y += 0.1;
+                this.ship.position.x += 0.1;
+                this.ship.rotation.y += 0.01;
+            }
+            if(event.key === 's'){
+                this.ship.position.y -= 0.1;
+                this.ship.position.x += 0.1;
+                this.ship.rotation.y -= 0.01;
+            }
+        });
         
         this.animate();
     }
@@ -74,10 +94,18 @@ class Game{
     animate = ()=> {
         requestAnimationFrame(this.animate);
 
-        //this.test.cube.rotation.x += 0.01;
-        //this.test.cube.rotation.y += 0.01;
-        this.cameraManager.update();
+        const delta = this.clock.getDelta();
+
+        this.cameraManager.update(delta, this.ship);
         this.sceneManager.update(this.skyGenerator.stars);
+
+        const camera = this.cameraManager.camera;
+
+        if(this.ship){
+            this.ship.position.x += 0.01;
+
+            this.asteroidManager.updateAsteroids();
+        }
         
         this.renderer.render(
             this.sceneManager.getScene(),

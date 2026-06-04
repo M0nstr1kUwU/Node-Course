@@ -1,4 +1,11 @@
 {
-  "ExpandedNodes": [],
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\config",
+    "\\src\\core",
+    "\\textures"
+  ],
+  "SelectedNode": "\\styles.css",
   "PreviewInSolutionExplorer": false
 }

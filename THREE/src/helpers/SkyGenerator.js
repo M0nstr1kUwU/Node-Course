@@ -54,8 +54,8 @@ export class SkyGenerator {
         }
 
         geometry.setAttribute( 'position', new THREE.Float32BufferAttribute( vertices, 3 ) );
-        const material = new THREE.PointsMaterial( { size: 55, sizeAttenuation: true, map: sprite, alphaTest: 0.5, transparent: true } );
-        material.color.setHSL( 1.0, 0.3, 0.7, THREE.SRGBColorSpace );
+        const material = new THREE.PointsMaterial( { size: 35, sizeAttenuation: true, map: sprite, alphaTest: 0.5, transparent: true } );
+        material.color.setHSL( 0.1, 0.1, 0.7, THREE.SRGBColorSpace );
 
         const particles = new THREE.Points( geometry, material );
         this.scene.add( particles );

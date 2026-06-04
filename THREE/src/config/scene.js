@@ -8,7 +8,7 @@ export const SCENE_CONFIG = {
     stars: {
         counts: 10000,
         color: 0xffffff,
-        size: 1
+        size: 0.3
     }
     
 }

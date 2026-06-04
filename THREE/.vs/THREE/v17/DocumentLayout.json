@@ -3,36 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\Desktop\\THREE\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\Desktop\\THREE\\src\\core\\TextureLoader.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\core\\TextureLoader.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\Desktop\\THREE\\src\\helpers\\PartsShip.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\helpers\\PartsShip.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\Desktop\\THREE\\src\\config\\light.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\config\\light.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\Desktop\\THREE\\src\\config\\texture.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\config\\texture.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\Desktop\\THREE\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\Desktop\\THREE\\src\\core\\ModelLoader.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\core\\ModelLoader.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\Desktop\\THREE\\src\\core\\CameraManager.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\core\\CameraManager.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\Desktop\\THREE\\src\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\Desktop\\THREE\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\Desktop\\THREE\\src\\core\\ModelLoader.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\core\\ModelLoader.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\Desktop\\THREE\\src\\core\\MaterialManager.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\core\\MaterialManager.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\Desktop\\THREE\\src\\core\\AsteroidManager.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\core\\AsteroidManager.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\Desktop\\THREE\\src\\helpers\\SkyGenerator.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\helpers\\SkyGenerator.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\Desktop\\THREE\\src\\entities\\Asteroid.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\entities\\Asteroid.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\Desktop\\THREE\\src\\entities\\Ship.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\entities\\Ship.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -70,105 +70,107 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "light.js",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\THREE\\src\\config\\light.js",
-              "RelativeDocumentMoniker": "src\\config\\light.js",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\THREE\\src\\config\\light.js",
-              "RelativeToolTip": "src\\config\\light.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAALAAAA",
+              "DocumentIndex": 5,
+              "Title": "SkyGenerator.js",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\THREE\\src\\helpers\\SkyGenerator.js",
+              "RelativeDocumentMoniker": "src\\helpers\\SkyGenerator.js",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\THREE\\src\\helpers\\SkyGenerator.js",
+              "RelativeToolTip": "src\\helpers\\SkyGenerator.js",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAAABQAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-05-20T10:39:53.536Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "texture.js",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\THREE\\src\\config\\texture.js",
-              "RelativeDocumentMoniker": "src\\config\\texture.js",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\THREE\\src\\config\\texture.js",
-              "RelativeToolTip": "src\\config\\texture.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAA8AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-05-19T09:23:10.294Z",
+              "WhenOpened": "2026-05-28T08:14:37.336Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "package.json",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\THREE\\package.json",
-              "RelativeDocumentMoniker": "package.json",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\THREE\\package.json",
-              "RelativeToolTip": "package.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-05-19T09:09:32.293Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TextureLoader.js",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\THREE\\src\\core\\TextureLoader.js",
-              "RelativeDocumentMoniker": "src\\core\\TextureLoader.js",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\THREE\\src\\core\\TextureLoader.js",
-              "RelativeToolTip": "src\\core\\TextureLoader.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAA0AAAA",
+              "Title": "AsteroidManager.js",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\THREE\\src\\core\\AsteroidManager.js",
+              "RelativeDocumentMoniker": "src\\core\\AsteroidManager.js",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\THREE\\src\\core\\AsteroidManager.js",
+              "RelativeToolTip": "src\\core\\AsteroidManager.js",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABsAAABRAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-05-19T08:51:31.346Z",
+              "WhenOpened": "2026-05-28T07:07:45.009Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "main.js",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\THREE\\src\\main.js",
-              "RelativeDocumentMoniker": "src\\main.js",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\THREE\\src\\main.js",
-              "RelativeToolTip": "src\\main.js",
-              "ViewState": "AQIAACUAAAAAAAAAAAAgwDcAAAAoAAAA",
+              "Title": "Asteroid.js",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\THREE\\src\\entities\\Asteroid.js",
+              "RelativeDocumentMoniker": "src\\entities\\Asteroid.js",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\THREE\\src\\entities\\Asteroid.js",
+              "RelativeToolTip": "src\\entities\\Asteroid.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-05-19T08:42:22.011Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ModelLoader.js",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\THREE\\src\\core\\ModelLoader.js",
-              "RelativeDocumentMoniker": "src\\core\\ModelLoader.js",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\THREE\\src\\core\\ModelLoader.js",
-              "RelativeToolTip": "src\\core\\ModelLoader.js",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-05-19T08:40:41.269Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PartsShip.js",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\THREE\\src\\helpers\\PartsShip.js",
-              "RelativeDocumentMoniker": "src\\helpers\\PartsShip.js",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\THREE\\src\\helpers\\PartsShip.js",
-              "RelativeToolTip": "src\\helpers\\PartsShip.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-05-19T08:38:14.799Z",
+              "WhenOpened": "2026-05-28T06:50:37.638Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "index.html",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\THREE\\index.html",
-              "RelativeDocumentMoniker": "index.html",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\THREE\\index.html",
-              "RelativeToolTip": "index.html",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAABMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2026-05-19T08:36:56.348Z"
+              "Title": "Ship.js",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\THREE\\src\\entities\\Ship.js",
+              "RelativeDocumentMoniker": "src\\entities\\Ship.js",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\THREE\\src\\entities\\Ship.js",
+              "RelativeToolTip": "src\\entities\\Ship.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-05-28T06:50:36.175Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MaterialManager.js",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\THREE\\src\\core\\MaterialManager.js",
+              "RelativeDocumentMoniker": "src\\core\\MaterialManager.js",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\THREE\\src\\core\\MaterialManager.js",
+              "RelativeToolTip": "src\\core\\MaterialManager.js",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABQAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-05-27T10:27:49.252Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CameraManager.js",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\THREE\\src\\core\\CameraManager.js",
+              "RelativeDocumentMoniker": "src\\core\\CameraManager.js",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\THREE\\src\\core\\CameraManager.js",
+              "RelativeToolTip": "src\\core\\CameraManager.js",
+              "ViewState": "AQIAACMAAAAAAAAAAAAAADwAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-05-26T07:35:33.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "main.js",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\THREE\\src\\main.js",
+              "RelativeDocumentMoniker": "src\\main.js",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\THREE\\src\\main.js",
+              "RelativeToolTip": "src\\main.js",
+              "ViewState": "AQIAACoAAAAAAAAAAAAAAGgAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-05-19T08:42:22.011Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ModelLoader.js",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\THREE\\src\\core\\ModelLoader.js",
+              "RelativeDocumentMoniker": "src\\core\\ModelLoader.js",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\THREE\\src\\core\\ModelLoader.js",
+              "RelativeToolTip": "src\\core\\ModelLoader.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-05-19T08:40:41.269Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",

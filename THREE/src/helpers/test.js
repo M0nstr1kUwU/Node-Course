@@ -10,14 +10,13 @@ export class TestObject{
     }
     
     createAll(){
-        this._createFigure();
-        //this._createGrid();
+        //this._createFigure();
+        this._createGrid();
         //this._createAxesHelper();
     }
     
     _createFigure(){
         this.group = new THREE.Group();
-        console.log(this.group);
         this.partsShip.addCabin(this.group, 'rock');
         this.partsShip.addCabin(this.group, 'armor');
         this.partsShip.addCabin(this.group, 'lunar');
