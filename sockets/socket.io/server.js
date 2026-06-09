@@ -1,17 +1,19 @@
-const express = require('express'); //imports
+const express = require('express');
 const socketio = require('socket.io');
 
 const app = express();
-app.use(express.static(__dirname + '/public')); // статичные файлы
+app.use(express.static(__dirname + '/public'));
 
-const expressServer = app.listen(8000);  // запуск основного сервера
+const expressServer = app.listen(8000);
 
-const io = socketio(expressServer); // запуск  на основном socket.io server 
+const io = socketio(expressServer);
 
-io.on('connection', (socket) => {   // socket = client from connection
+io.on('connection', (socket) => {
 
     socket.on("sendMessage", (data) => {
-        console.log(data);
-        io.sockets.emit("newMessage", {data});
+        const text = data.data;
+        const id = data.socket_id;
+        console.log(id);
+        io.sockets.emit("newMessage", {text: `${text}`, id: id});
     })
 });

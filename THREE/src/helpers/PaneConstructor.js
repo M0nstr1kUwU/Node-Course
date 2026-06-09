@@ -1,3 +1,4 @@
+
 import * as THREE from 'three';
 import {Pane} from '../../node_modules/tweakpane/dist/tweakpane.min.js';
 import {LightManager} from '../core/LightManager.js'
@@ -7,7 +8,7 @@ export class PaneConstructor{
     constructor(){
         this.pane = new Pane();
     }
-
+     
     createAll(group){
 
         this._createGroupPosition(group, this.createFolder(`${group.name} Position`));
