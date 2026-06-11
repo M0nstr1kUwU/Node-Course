@@ -1,19 +1,28 @@
 {
   "name": "chat_game",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "index.js",
   "type": "module",
+  "dependencies": {
+    "@fastify/static": "^9.1.3",
+    "debug": "^4.4.3",
+    "engine.io-client": "^6.6.5",
+    "engine.io-parser": "^5.2.3",
+    "fastify": "^5.8.5",
+    "ms": "^2.1.3",
+    "socket.io": "^4.8.3",
+    "socket.io-client": "^4.8.3",
+    "socket.io-parser": "^4.2.6",
+    "three": "^0.184.0",
+    "ws": "^8.20.1",
+    "xmlhttprequest-ssl": "^2.1.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "M0nstr1kUwU",
   "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "@fastify/static": "^9.1.3",
-    "fastify": "^5.8.5",
-    "socketio": "^1.0.0"
-  }
+  "description": ""
 }
