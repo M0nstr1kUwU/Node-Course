@@ -13,7 +13,7 @@ export class CameraManager{
         this.rendererDomElement = rendererDomElement;
     }
     
-    create(){
+    create(ship){
         this.camera = new THREE.PerspectiveCamera(
             CAMERA_CONFIG.fov,
             window.innerWidth / window.innerHeight,
@@ -26,9 +26,9 @@ export class CameraManager{
             CAMERA_CONFIG.position.z,
         )
         this.camera.lookAt(
-            CAMERA_CONFIG.target.x,
-            CAMERA_CONFIG.target.y,
-            CAMERA_CONFIG.target.z,
+            ship.position.x,
+            ship.position.y,
+            ship.position.z
         )
         return this.camera
     }
@@ -38,7 +38,7 @@ export class CameraManager{
         this.camera.updateProjectionMatrix();
     }
     
-    createOrbitControls() {
+    createOrbitControls(ship) {
         const { enablePan,autoRotate, dampingFactor, enableDamping,rotateSpeed , enableZoom, zoomSpeed} = CAMERA_CONFIG.controls;
         this.controls = new OrbitControls(this.camera, this.rendererDomElement);
 
@@ -50,7 +50,11 @@ export class CameraManager{
         this.controls.enableZoom = enableZoom;
         this.controls.zoomSpeed = zoomSpeed;
         
-        this.controls.target.set(0, 0, 0);
+        this.controls.target.set(
+            ship.position.x,
+            ship.position.y,
+            ship.position.z
+        );
         
         return this.controls;
     }

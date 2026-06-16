@@ -7,7 +7,7 @@ import {CameraManager} from './core/CameraManager.js';
 import {LightManager} from './core/LightManager.js';
 import {SkyGenerator} from './helpers/SkyGenerator.js';
 import {ModelLoader} from './core/ModelLoader.js';
-import {AsteroidManager} from './core/AsteroidManager.js';
+import {NetworkManager} from './core/NetworkManager.js';
 
 class Game{
     constructor(){
@@ -16,9 +16,10 @@ class Game{
         this.lightManager = null;
         this.modelLoader = null;
         this.renderer = null;
+        this.networkManager = null;
+        this.remotePlayer = new Map();
         
         this.skyGenerator = null;
-        this.asteroidManager = null;
 
         this.ship = null;
 
@@ -36,10 +37,6 @@ class Game{
         this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         document.body.appendChild(this.renderer.domElement);
         
-        this.cameraManager = new CameraManager(this.renderer.domElement);
-        this.cameraManager.create();
-        this.cameraManager.createOrbitControls();
-        
         this.lightManager = new LightManager(scene);
         this.lightManager.createAll();
 
@@ -48,8 +45,9 @@ class Game{
 
         setTimeout(() => {
             this.ship = this.modelLoader.getModel();
-            this.asteroidManager = new AsteroidManager(scene, this.ship);
-            this.asteroidManager.spawnAsteroids();
+            this.cameraManager = new CameraManager(this.renderer.domElement);
+            this.cameraManager.create(this.ship);
+            this.cameraManager.createOrbitControls(this.ship);
         }, 1000)
         
         this.skyGenerator = new SkyGenerator(scene);
@@ -103,8 +101,6 @@ class Game{
 
         if(this.ship){
             this.ship.position.x += 0.01;
-
-            this.asteroidManager.updateAsteroids();
         }
         
         this.renderer.render(
