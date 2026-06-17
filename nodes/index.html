@@ -5,30 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notes Manager</title>
     <style>
-        *{
+        * {
             background-color: rgb(15, 15, 15);
         }
-        #stats{
+        #stats {
             background-color: rgba(21, 194, 16, 0.692);
+            padding: 10px;
         }
-        #content{
+        #content {
             color: crimson;
         }
-        .menu-buttons button{
+        .menu-buttons button {
             color: whitesmoke;
+            background-color: #2c2c2c;
+            border: 1px solid #444;
+            padding: 8px 12px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        #user-info {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: white;
+            background-color: #1e1e1e;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+        #user-info button {
+            background-color: #8b2e2e;
+            border: none;
+            color: white;
+            margin-left: 10px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <div id="stats"> </div>
+    <div id="user-info"></div>
+    <div id="stats"></div>
     <div class="menu-buttons">
-        <button onclick='showNotes()'> Показать заметки </button>
-        <button onclick='addNote()'> Добавить заметку </button>
-        <button onclick='resetNote()'> Изменить заметку </button>
-        <button onclick='deleteNote()'> Удалить заметку </button>
+        <button onclick="showNotes()">Показать заметки</button>
+        <button onclick="addNote()">Добавить заметку</button>
+        <button onclick="resetNote()">Изменить заметку</button>
+        <button onclick="deleteNote()">Удалить заметку</button>
     </div>
-    <div id="content"> </div>
+    <div id="content"></div>
 
-    <script src="app.js"></script>
+    <script type="module" src="app.js"></script>
 </body>
 </html>

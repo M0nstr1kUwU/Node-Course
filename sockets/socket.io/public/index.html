@@ -1,0 +1,61 @@
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        #my_message{
+            background-color: aquamarine;
+            border-radius: 5px;
+        }
+        #our_message {
+            background-color: antiquewhite;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!--html render element-->
+    
+    <div class="container">
+        <span>CHAT IO</span>
+        <input class="form-control" id="inputText" type="text" placeholder="Input text here...">
+        <button class="btn btn-primary" id="btnSend">Send</button>
+    </div>
+
+    <div class="container" >
+        <ul id="messages">
+
+        </ul>
+    </div>
+    
+    <!--code namespace-->
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script>
+        const inputText = document.querySelector('#inputText');
+        const buttonSend = document.querySelector('#btnSend');
+        const chat = document.querySelector('#messages');
+
+        const socket = io('http://localhost:8000');
+
+        socket.on('connect', () => {
+
+        });
+
+        function sendMessage() {
+            let text = inputText.value;
+            socket.emit("sendMessage", { data: `${text}` , socket_id: socket.id});
+        }
+
+        socket.on("newMessage", (dataFromClients) => {
+            if (socket.id === dataFromClients.id) {
+                chat.innerHTML += `<li id="my_message">${dataFromClients.text}</li>`
+            }
+            else {
+                chat.innerHTML += `<li id="our_message">${dataFromClients.text}</li>`
+            }
+            
+        });
+
+        buttonSend.addEventListener('click', sendMessage);
+    </script>
+</body>
+

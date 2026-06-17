@@ -1,0 +1,15 @@
+assist/
+├─ manifest.json
+├─ icons/128.png
+├─ assist_src/
+│  ├─ index.html
+│  ├─ popup.js
+│  ├─ style.css
+│  ├─ background.js
+│  ├─ settings.html
+│  ├─ settings.js
+│  └─ func_src/
+│     ├─ imageDownloader.js
+│     ├─ mustHave.js
+│     ├─ devTools.js
+│     └─ media.js
